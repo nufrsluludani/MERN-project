@@ -1,73 +1,18 @@
-import { Box, useMediaQuery, useTheme } from '@mui/material'
+import React from "react";
+import { Box } from '@mui/material';
+import Sidebar from '@/components/Sidebar'; // Import Sidebar component
 
-
-const gridTemplateLargeScreens = `
-    "a b c"
-    "a b c"
-    "a b c"
-    "a b f"
-    "d e f"
-    "d e f"
-    "d h i"
-    "g h i"
-    "g h j"
-    "g h j"
-`;
-
-const gridTemplateSmallScreens = `
-    "a"
-    "a"
-    "a"
-    "a"
-    "b"
-    "b"
-    "b"
-    "b"
-    "c"
-    "c"
-    "c"
-    "d"
-    "d"
-    "d"
-    "e"
-    "e"
-    "f"
-    "f"
-    "f"
-    "g"
-    "g"
-    "g"
-    "h"
-    "h"
-    "h"
-    "h"
-    "i"
-    "i"
-    "j"
-    "j"
-`;
-
-const Dashboard = () => {
-    const isAboveMediumScreens = useMediaQuery("(min-width: 1200px)");
+const Budget = () => {
     return (
-        <Box width="100%" 
-        height="100%" 
-        display="grid" 
-        gap="1.5rem"
-        sx ={
-            isAboveMediumScreens ? {
-            gridTemplateColumns: "repeat(3, minmax(370px, 1fr))",
-            gridTemplateRows: "repeat(10, minmax(60px, 1fr))",
-            gridTemplateAreas: gridTemplateLargeScreens,
-            } : {
-                gridAutoColumns: "1fr",
-                gridAutoRows: "80px",
-                gridTemplateAreas: gridTemplateSmallScreens,
-            }
-        }
-        >
+        <Box display="flex" width="100%" height="100%">
+            {/* Render the Sidebar component */}
+            <Sidebar />
+            {/* Main content of the Budget page */}
+            <Box flexGrow={1}>
+                {/* Add your Budget page content here */}
+            </Box>
         </Box>
-    )
+    );
 }
 
-export default Dashboard
+export default Budget;

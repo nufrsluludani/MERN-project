@@ -19,11 +19,12 @@ function App() {
           <Box width="100%" height="100%" padding="1rem 2rem 4rem 2rem">
           <Navbar />
           <Routes>
-            <Route element={<Layout />}/>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/predictions" element={<Predictions />} />
-            <Route path="/budget" element={<Budget />} />
-          </Routes>
+              {/* Render Layout component for all routes */}
+              <Route element={<Layout />} />
+              <Route path="/" element={<Dashboard />} />
+              <Route path="/predictions" element={<Predictions />} />
+              <Route path="/budget" element={<Budget />} />
+            </Routes>
           </Box>
         </ThemeProvider>
       </BrowserRouter> 
