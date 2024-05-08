@@ -4,9 +4,8 @@ import { Box, Typography, useTheme } from "@mui/material";
 import FlexBetween from "@/components/FlexBetween";
 import PixIcon from '@mui/icons-material/Pix';
 
-type Props = {}
 
-const Navbar = (props: Props) => {
+const Navbar = () => {
     const { palette } = useTheme();
     const [selected, setSelected] = useState("dashboard"); // default page is dashboard
     return <FlexBetween 
@@ -22,7 +21,7 @@ const Navbar = (props: Props) => {
         </FlexBetween>
 
 
-        {/* LEFT SIDE */}
+        {/* RIGHT SIDE */}
         <FlexBetween gap="2rem">
             <Box sx={{"&:hover": {color: palette.primary[100]}}}>
                 <Link 
@@ -46,6 +45,18 @@ const Navbar = (props: Props) => {
                     }}
                 >
                     predictions
+                </Link>
+            </Box>
+            <Box sx={{"&:hover": {color: palette.primary[100]}}}>
+                <Link 
+                    to="/budget"
+                    onClick={() => setSelected("budget")}
+                    style={{
+                        color: selected === "budget" ? "inherit" : palette.grey[700],
+                        textDecoration: "inherit"
+                    }}
+                >
+                    budget
                 </Link>
             </Box>
         </FlexBetween>
